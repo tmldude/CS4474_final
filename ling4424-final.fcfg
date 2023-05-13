@@ -1,0 +1,235 @@
+% start S
+############################
+# Grammar Rules
+#############################
+
+## Relative clauses
+S/NP -> NP/NP VP
+CP -> 'that' S/NP
+N -> N CP
+NP/NP ->
+
+
+
+##Sentence productions
+S -> DP VP
+S -> S Conj S
+
+S -> 'there' V DP
+
+S -> 'sorry' PP
+
+S -> DC S
+S -> S DC
+
+DC -> 'as' S
+DC -> VBG AP
+
+AP -> AP Conj AP
+
+## DP Productions
+DP -> Det N
+DP -> N
+DP -> NP
+DP -> 'both' 'of' DP
+DP -> DP PP
+DP -> Det NP
+DP -> DP VBG
+
+NP -> AP N
+N -> N 'and' N
+
+
+## VP Productions
+VP[coor=no] -> IV
+VP[coor=no] -> V AP
+VP[coor=no] -> V A[EM=yes] 'that' S
+VP[coor=no] -> V N
+VP[coor=no] -> VP[coor=no] PP
+VP[coor=no] -> VP[coor=no] PaP
+VP[coor=no] -> VP[coor=no] ADV
+
+VP[coor=no] -> TV DP
+VP[coor=no] -> TV INP
+
+
+VP[coor=yes] -> VP Conj VP
+VP[coor=yes] -> VP Conj VP
+
+VP -> V VBGP
+VP -> AUX ADV VP
+
+VBGP -> VBG[trans=tr] PP
+VBGP -> VBG[trans=in]
+VBGP -> VBG[trans=di] DP DP
+
+## Indefinite Verb Phrase (INP) Productions
+INP -> 'to' IV
+
+## Preposition phrases
+PP -> P DP
+PP -> P VP
+
+## Participle phrases
+PaP -> PaP Conj PaP
+PaP -> VBG DP
+PaP -> VBG ADV
+PaP -> VBG[trans=di] DP DP
+
+## Adjective phrases
+AP -> ADV A
+AP -> A
+AP -> AP PP
+
+ADV -> ADV Conj ADV
+
+
+#############################
+# Lexical Rules
+#############################
+
+#Determiners#
+Det -> 'no'
+Det -> 'a'
+Det -> 'the'
+Det -> 'every'
+Det -> 'both'
+Det -> 'their'
+
+#Nouns#
+N -> 'car'
+N -> 'drawers'
+N -> 'cat'
+N -> 'home'
+N -> 'hours'
+N -> 'pat'
+N -> 'driveway'
+N -> 'door'
+N -> 'room'
+N -> 'curtains'
+N -> 'sun'
+N -> 'hope'
+N -> 'sign'
+N -> 'tail'
+N -> 'tails'
+N -> 'walk'
+N -> 'wait'
+N -> 'sound'
+N -> 'house'
+N -> 'dog'
+N -> 'head'
+N -> 'response'
+N -> 'owner'
+N -> 'sunset'
+N -> 'door'
+
+
+#Present Participles#
+VBG[trans=di] -> 'giving'
+VBG -> 'feeling'
+VBG[trans=in] -> 'meowing'
+VBG[trans=tr] -> 'wagging'
+VBG[trans=tr] -> 'pulling'
+VBG -> 'waiting'
+
+#Auxilary Verbs
+AUX -> 'did'
+
+#Transitive Verbs#
+TV -> 'ran'
+TV -> 'decided'
+TV -> 'see'
+TV -> 'scooped'
+TV -> 'heard'
+TV -> 'confused'
+TV -> 'walked'
+TV -> 'found'
+TV -> 'give'
+TV -> 'give' 'up'
+TV -> 'searched'
+TV -> 'followed'
+TV -> 'wagged'
+TV -> 'saw'
+
+# Ditransitive Verbs #
+
+DTV -> 'gave'
+VP -> DTV DP DP
+
+#Verb#
+V -> 'was'
+V -> 'am'
+V -> 'be'
+V -> 'were'
+
+
+#Intransitive Verbs#
+IV -> 'mind'
+IV -> 'set'
+IV -> 'play'
+IV -> 'came'
+IV -> 'wait'
+IV -> 'began'
+IV -> 'ran'
+IV -> 'sit'
+IV -> 'walked'
+IV -> 'meowed'
+IV -> 'said'
+IV -> 'arrived'
+IV -> 'whined'
+IV -> 'passed'
+IV -> 'started'
+IV -> 'rushed'
+IV -> 'walked' 'in'
+IV -> 'followed'
+
+
+#Adverbs#
+ADV -> 'back'
+ADV -> 'late'
+ADV -> 'just'
+ADV -> 'up'
+ADV -> 'not'
+ADV -> 'today'
+ADV -> 'excitedly'
+ADV -> 'so'
+ADV -> 'happily'
+
+
+#Adjectives#
+A[EM=no] -> 'empty'
+A[EM=yes] -> 'happy'
+A[EM=yes] -> 'confused'
+A[EM=no] -> 'long'
+A[EM=yes] -> 'worried'
+A[EM=yes] -> 'sorry'
+A[EM=no] -> 'gone'
+A[EM=no] -> 'back'
+
+
+#Pronouns#
+DP -> 'I'
+DP -> 'me'
+DP -> 'you'
+DP -> 'they'
+DP -> 'them'
+DP -> 'each'
+DP -> 'you' 'both'
+DP -> 'it'
+
+
+#Prepositions# 
+P -> 'to'
+P -> 'by'
+P -> 'on'
+P -> 'in'
+P -> 'into'
+P -> 'for'
+P -> 'of'
+P -> 'up'
+
+
+# Conjunctions #
+Conj -> 'and'
+Conj -> 'but'
+Conj -> 'because'

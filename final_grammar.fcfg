@@ -1,0 +1,148 @@
+
+
+S[SEM=<?subj(?vp)>] -> DP[NUM=?b, SEM=?subj] VP[NUM=?b, SEM=?vp]
+S[SEM=<?vp(?subj)>] -> NP[NUM=?b, SEM=?subj] VP[NUM=?b, SEM=?vp]
+
+DP[NUM=?n,SEM=<?det(?nom)> ] -> Det[NUM=?n,SEM=?det]  N[NUM=?n,SEM=?nom]
+
+VP[NUM=?n,SEM=<?v(?obj)>] -> IV[NUM=?n,SEM=?v] N[SEM=?obj]
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Determiners#
+Det[SEM=<\P Q.all n.(P(n) -> not Q(n))>] -> 'no'
+Det[NUM=sg,SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'a'
+Det[NUM=sg, SEM=<\P Q.exists h.all n.(P(n) -> Q(n) & (h!=n -> !Q(n)))>] -> 'the'
+
+
+Det[NUM=sg,SEM=<\P Q.all x.(P(x) -> Q(x))>] -> 'every'
+Det[NUM=pl,SEM=<\P Q.all x.(P(x) & Q(x))>] -> 'both'
+Det[NUM=pl, SEM=<\P Q. exists x.(P(x) & Q(x))>] -> 'their'
+
+
+#Nouns#
+N[NUM=sg, SEM=<\x.car(x)>] -> 'car'
+N[NUM=pl, SEM=<\x.drawer(x)>] -> 'drawers'
+N[NUM=sg, SEM=<\x.cat(x)>] -> 'cat'
+N[NUM=sg, SEM=<\x.home(x)>] -> 'home'
+N[NUM=sg, SEM=<\x.hours(x)>] -> 'hours'
+N[NUM=sg, SEM=<\x.pat(x)>] -> 'pat'
+N[NUM=sg,SEM=<\x.driveway(x)>] -> 'driveway'
+N[NUM=sg,SEM=<\x.door(x)>] -> 'door'
+N[NUM=sg,SEM=<\x.room(x)>] -> 'room'
+N[NUM=pl,SEM=<\x.curtain(x)>] -> 'curtains'
+N[NUM=sg,SEM=<\x.sun(x)>] -> 'sun'
+N[NUM=sg,SEM=<\x.hope(x)>] -> 'hope'
+N[NUM=sg,SEM=<\x.sign(x)>] -> 'sign'
+N[NUM=sg,SEM=<\x.tail(x)>] -> 'tail'
+N[NUM=pl,SEM=<\x.tail(x)>] -> 'tails'
+N[NUM=sg,SEM=<\x.walk(x)>] -> 'walk'
+N[NUM=sg,SEM=<\x.sound(x)>] -> 'sound'
+N[NUM=sg,SEM=<\x.house(x)>] -> 'house'
+N[NUM=sg,SEM=<\x.dog(x)>] -> 'dog'
+N[NUM=sg,SEM=<\x.head(x)>] -> 'head'
+N[NUM=sg,SEM=<\x.response(x)>] -> 'response'
+N[NUM=sg,SEM=<\x.owner(x)>] -> 'owner'
+N[NUM=sg,SEM=<\x.sunset(x)>] -> 'sunset'
+
+
+
+
+
+
+#Present Participles#
+VBG[SEM=<\x.give(x)>, TNS=pres] -> 'giving'
+VBG[SEM=<\x.feel(x)>, TNS=pres] -> 'feeling'
+VBG[SEM=<\x.meow(x)>, TNS=pres] -> 'meowing'
+VBG[SEM=<\y x.wag(x,y)>, TNS=pres] -> 'wagging'
+VBG[SEM=<\y x.pull(x,y)>, TNS=pres] -> 'pulling'
+VBG[SEM=<\y x.wait(x,y)>, TNS=pres] -> 'waiting'
+
+
+#Transitive Verbs#
+TV[SEM=<\y x.be(x,y)>,TNS=present] -> 'be'
+TV[SEM=<\y x.set(x,y)>,TNS=present] -> 'set'
+TV[SEM=<\y x.decide(x,y)>,TNS=past] -> 'decided'
+TV[SEM=<\y x.follow(x,y)>,TNS=past] -> 'followed'
+TV[NUM=pl,SEM=<\y x.see(x,y)>,TNS=pres] -> 'see'
+TV[SEM=<\y x.scoop(x, y)>, TNS=past] -> 'scooped'
+TV[SEM=<\y x.heard(x, y)>, TNS=past] -> 'heard'
+TV[SEM=<\y x.confused(x, y)>, TNS=past] -> 'confused'
+TV[NUM=sg,SEM=<\y x.mind(x,y)>,TNS=present] -> 'mind'
+TV[NUM=sg,SEM=<\y x.play(x,y)>,TNS=present] -> 'play'
+TV[NUM=sg,SEM=<\y x.start(x,y)>,TNS=past] -> 'started'
+TV[NUM=sg,SEM=<\y x.arrive(x,y)>,TNS=past] -> 'arrived'
+TV[NUM=sg,SEM=<\y x.walk(x,y)>,TNS=past] -> 'walked'
+TV[NUM=sg,SEM=<\y x.whine(x,y)>,TNS=past] -> 'whined'
+TV[NUM=sg,SEM=<\y x.find(x,y)>,TNS=past] -> 'found'
+TV[NUM=sg,SEM=<\y x.give(x,y)>,TNS=past] -> 'give'
+TV[NUM=sg,SEM=<\y x.pass(x,y)>,TNS=past] -> 'passed'
+TV[NUM=sg,SEM=<\y x.rush(x,y)>,TNS=past] -> 'rushed'
+
+# Ditransitive Verbs #
+
+DTV[TNS=past] -> 'gave'
+
+#Verb#
+V[NUM=sg, SEM=<\n.exists c.char(n,c)>, TNS=past] -> 'was'
+V[NUM=sg, SEM=<\n.exists c.char(n,c)>, TNS=pres] -> 'am'
+
+#Intransitive Verbs#
+IV[SEM=<\x.come(x)>,TNS=past] -> 'came'
+IV[NUM=pl, SEM=<\x.wait(x)>,TNS=pres] -> 'wait'
+IV[SEM=<\x.search(x)>, TNS=past] -> 'searched'
+IV[SEM=<\x.begin(x)>, TNS=past] -> 'began'
+IV[SEM=<\x.run(x)>,TNS=past] -> 'ran'
+IV[NUM=pl, SEM=<\x.sit(x)>,TNS=pres] -> 'sit'
+IV[SEM=<\x.walk(x)>,TNS=past] -> 'walked'
+IV[SEM=<\x.meow(x)>,TNS=past] -> 'meowed'
+IV[SEM=<\x.say(x)>,TNS=past] -> 'said'
+
+#Adverbs#
+ADV[SEM=<\x.back(x)>] -> 'back'
+ADV[SEM=<\x.late(x)>] -> 'late'
+ADV[SEM=<\x.just(x)>] -> 'just'
+ADV[SEM=<\x.up(x)>] -> 'up'
+ADV[STR=?s, SEM=<\P x.-P(x)>] -> 'not'
+ADV[NUM=sg, SEM=<\x.today(x)>] -> 'today'
+ADV -> 'excitedly'
+ADV -> 'so'
+
+
+#Adjectives#
+A[SEM=<\x.empty(x)>] -> 'empty'
+A[SEM=<\x.happy(x)>] -> 'happy'
+A[SEM=<\x.confused(x)>] -> 'confused'
+A[SEM=<\x.long(x)>] -> 'long'
+A[SEM=<\x.worried(x)>] -> 'worried'
+A[SEM=<\x.sorry(x)>] -> 'sorry'
+A[SEM=<\x.gone(x)>] -> 'gone'
+
+#Pronouns#
+NP[NUM=sg, SEM=<\x.speaker(x)>, CASE=nom] -> 'I'
+NP[NUM=sg, SEM=<\x.speaker(x)>, CASE=acc] -> 'me'
+NP[SEM=<\x.listener(x)>, CASE=acc] -> 'you'
+NP[NUM=pl, SEM=<\x.3rdparty(x)>, CASE=nom] -> 'they'
+NP[NUM=pl, SEM=<\x.3rdparty(x)>, CASE=acc] -> 'them'
+NP[NUM=sg, SEM=<\x.3rdparty(x)>] -> 'each'
+
+#Prepositions# 
+#P[???] -> 'to'
+#P[???] -> 'by'
+#P[???] -> 'on'
+#P[???] -> 'in'
+#P[???] -> 'into'
+#P[???] -> 'for'
+#P[???] -> 'of'
+
+
